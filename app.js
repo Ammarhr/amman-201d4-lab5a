@@ -62,11 +62,10 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
     var multi1 = multiply(multNew[0], c)[0];
     console.log(multi1);
     var message3 = `${a} and ${b} and ${c} sum to ${sum1[0]}.`;
-    // var messag4 = `The product of ${a} and ${b} and ${c} is ${multi1[0]}.`
-    // console.log(message3);
-    // console.log(messag4);
-    return [sum1];
-    // return [sum1, multi1, message3, messag4];
+    var messag4 = `The product of ${a} and ${b} and ${c} is ${multi1[0]}.`
+    console.log(message3);
+    console.log(messag4);
+    return [sum1, multi1, message3, messag4];
 }
 // sumAndMultiply(4, 7, 5);
 testSumAndMultiply(4, 7, 5);
@@ -89,9 +88,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-    var sumArr = testArray[0] + testArray[1] + testArray[2];
-    var message = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sumArr} is their sum.`;
-    return [sumArr, message];
+    // console.log(sumArr);
+    var arry1 = sum(testArray[0], testArray[1]);
+    // console.log(array1);
+    var array2 = sum(arry1[0], testArray[2]);
+    var message = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${array2[0]} is their sum.`;
+    // console.log(message);
+    return [array2[0], message];
+    // var sumArr = testArray[0] + testArray[1] + testArray[2];
+    // var message = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sumArr} is their sum.`;
+    // return [sumArr, message];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -106,17 +112,23 @@ Write a function called multiplyArray() that takes an array of numbers as its ar
 
 "The numbers 2,3,4 have a product of 24."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
+IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.0 
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var arrayF = multiply(testArray[0], testArray[1])[0];
+    // console.log(arrayF);
+    var arrayF2 = multiply(arrayF, testArray[2])[0];
+    // console.log(arrayF2);
+    var messageArr2 = `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${arrayF2}.`;
+    console.log(messageArr2);
+    return [arrayF2, messageArr2];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -140,8 +152,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    //only ex.:this array have many possibilities of length
+    // for (var i = 0; i <= testDynamicArray.length; i++) {
+    //     var item = multiply(testArray[i], testArray[i]);
+    //     if (i == item.length) {
+    //         return items;
+    //         console.log(items);
+    //     }
+    // }
 }
+// multiplyAnyArray();
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
