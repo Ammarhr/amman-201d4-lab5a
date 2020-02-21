@@ -60,11 +60,11 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
     // console.log(sum1);
     var multNew = multiply(a, b);
     var multi1 = multiply(multNew[0], c)[0];
-    console.log(multi1);
+    // console.log(multi1);
     var message3 = `${a} and ${b} and ${c} sum to ${sum1[0]}.`;
     var messag4 = `The product of ${a} and ${b} and ${c} is ${multi1[0]}.`
-    console.log(message3);
-    console.log(messag4);
+        // console.log(message3);
+        // console.log(messag4);
     return [sum1, multi1, message3, messag4];
 }
 // sumAndMultiply(4, 7, 5);
@@ -95,6 +95,8 @@ function sumArray(sumArr) { //eslint-disable-line
     var message = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${array2[0]} is their sum.`;
     // console.log(message);
     return [array2[0], message];
+
+    // the logic:
     // var sumArr = testArray[0] + testArray[1] + testArray[2];
     // var message = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sumArr} is their sum.`;
     // return [sumArr, message];
@@ -123,7 +125,7 @@ function multiplyArray(multArr) { //eslint-disable-line
     var arrayF2 = multiply(arrayF, testArray[2])[0];
     // console.log(arrayF2);
     var messageArr2 = `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${arrayF2}.`;
-    console.log(messageArr2);
+    // console.log(messageArr2);
     return [arrayF2, messageArr2];
 }
 
@@ -152,18 +154,29 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-    //only ex.:this array have many possibilities of length
-    // for (var i = 0; i <= testDynamicArray.length; i++) {
-    //     var item = multiply(testArray[i], testArray[i]);
-    //     if (i == item.length) {
-    //         return items;
-    //         console.log(items);
-    //     }
-    // }
+    //     // only ex.:this array have many possibilities of length
+    var i = 0;
+    var itemArr = 1;
+    for (i; i < testDynamicArray.length; i++) {
+        itemArr = multiply(itemArr, testDynamicArray[i])[0];
+        // console.log(itemArr);
+    }
+    var message = `The numbers ${testDynamicArray[0]},${testDynamicArray[1]},${testDynamicArray[2]},${testDynamicArray[3]},${testDynamicArray[4]} have a product of ${itemArr}.`
+        // console.log(message);
+    return [itemArr, message];
 }
-// multiplyAnyArray();
+
+// the logic:
+// function multiplyEach(items) {
+//     var product = 1;
+//     for (var i = 0; i < items.length; i++) {
+//         product = product * items[i];
+//     }
+//     return product;
+// }
+// console.log(multiplyEach([1, 2, 3, 4, 5]));
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
